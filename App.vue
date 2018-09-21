@@ -6,54 +6,42 @@
       </view>
     </view>
     <view class="main">
-      <button-one :on-add='_onPress' buttonlabel="7" />
-      <button-one :on-add='_onPress' buttonlabel="8" />
-      <button-one :on-add='_onPress' buttonlabel="9" />
-      <view class="calc-container">
-        <touchable-opacity :on-press="plus" class="calc-button">
-          <text class="calc-button-text">+</text>
-        </touchable-opacity>
-      </view>
+      <button-number :on-add='_onPress' buttonlabel="7" />
+      <button-number :on-add='_onPress' buttonlabel="8" />
+      <button-number :on-add='_onPress' buttonlabel="9" />
+      <button-symbols-of-operation :detect-button='plus' buttonlabel="+" />
     </view>
     <view class="main">  
-      <button-one :on-add='_onPress' buttonlabel="4" />
-      <button-one :on-add='_onPress' buttonlabel="5" />
-      <button-one :on-add='_onPress' buttonlabel="6" />
-      <view class="calc-container">  
-        <touchable-opacity :on-press="multiplied" class="calc-button">
-          <text class="calc-button-text">x</text>
-        </touchable-opacity>
-      </view>
+      <button-number :on-add='_onPress' buttonlabel="4" />
+      <button-number :on-add='_onPress' buttonlabel="5" />
+      <button-number :on-add='_onPress' buttonlabel="6" />
+      <button-symbols-of-operation :detect-button='multiplied' buttonlabel="x" />
     </view>
     <view class="main">  
-      <button-one :on-add='_onPress' buttonlabel="1" />
-      <button-one :on-add='_onPress' buttonlabel="2" />
-      <button-one :on-add='_onPress' buttonlabel="3" />
-      <view class="calc-container">  
-        <touchable-opacity :on-press="sum" class="calc-button">
-          <text class="calc-button-text">=</text>
-        </touchable-opacity>
-      </view>
-
+      <button-number :on-add='_onPress' buttonlabel="1" />
+      <button-number :on-add='_onPress' buttonlabel="2" />
+      <button-number :on-add='_onPress' buttonlabel="3" />
+      <button-symbols-of-operation :detect-button='sum' buttonlabel="=" />
     </view>
     <view class="main">
-      <button-one :on-add='_onPress' buttonlabel="0" />
-      <view class="calc-container"></view>
-      <view class="calc-container"></view>
-      <view class="calc-container">  
-        <touchable-opacity :on-press="clear" class="calc-button">
-          <text class="calc-button-text">Clear</text>
-        </touchable-opacity>
-      </view>
+      <button-number :on-add='_onPress' buttonlabel="0" />
+      <fake-button buttonlabel="1" />
+      <fake-button buttonlabel="2" />
+      <button-symbols-of-operation :detect-button='clear' buttonlabel="Clear" />
     </view>
   </view>
 </template>
 
 <script>
-import ButtonOne from './src/buttonOne';
+import ButtonNumber from './src/ButtonNumber';
+import ButtonSymbolsOfOperation from './src/ButtonSymbolsOfOperation';
+import FakeButton from './src/FakeButton';
+
 export default {
   components: {
-    ButtonOne
+    ButtonNumber,
+    ButtonSymbolsOfOperation,
+    FakeButton
   },
   methods: {
     _onPress: function (buttonlabel) {
@@ -110,23 +98,6 @@ export default {
   flex-direction: row;
   max-width: 400px;
   align-items: center;
-}
-.calc-container {
-  flex: 1;
-  padding: 2px;  
-}
-.calc-button {
-  flex: 1;
-  background-color: #99ddcc;
-  align-items: center;
-  justify-content: center;
-  max-width: 80px;
-  border-radius: 10px;
-}
-.calc-button-text {
-  color: white;
-  font-weight: bold;
-  font-size: 24px;
 }
 .button-text {
   color: #414040;
