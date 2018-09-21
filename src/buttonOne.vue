@@ -1,6 +1,6 @@
 <template>
   <view class="container">
-    <touchable-opacity :on-press="check" class="button">
+    <touchable-opacity :on-press="detectButton" class="button">
       <text class="button-text">{{ buttonlabel }}</text>
     </touchable-opacity>
   </view>
@@ -8,12 +8,13 @@
 
 <script>
 export default {
-  props: [
-    'buttonlabel'
-  ],
+  props: {
+    buttonlabel: String,
+    onAdd: Function
+  },
   methods: {
-    check: function () {
-      alert("hello"+ this.buttonlabel)
+    detectButton: function () {
+      this.onAdd(this.buttonlabel)
     }
   }
 }
@@ -32,7 +33,7 @@ export default {
     justify-content: center;
     padding-top: 5px;
     padding-bottom: 5px;
-    max-width: 80px;
+    max-width: 120px;
 }
 .button-text {
     color: white;
