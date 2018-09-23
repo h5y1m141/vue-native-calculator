@@ -11,13 +11,13 @@
       <button-number :on-add='_onPress' buttonlabel="9" />
       <button-symbols-of-operation :detect-button='plus' buttonlabel="+" />
     </view>
-    <view class="main">  
+    <view class="main">
       <button-number :on-add='_onPress' buttonlabel="4" />
       <button-number :on-add='_onPress' buttonlabel="5" />
       <button-number :on-add='_onPress' buttonlabel="6" />
       <button-symbols-of-operation :detect-button='multiplied' buttonlabel="x" />
     </view>
-    <view class="main">  
+    <view class="main">
       <button-number :on-add='_onPress' buttonlabel="1" />
       <button-number :on-add='_onPress' buttonlabel="2" />
       <button-number :on-add='_onPress' buttonlabel="3" />
@@ -45,8 +45,9 @@ export default {
   },
   methods: {
     _onPress: function (buttonlabel) {
-      if(this.currentLabel === '0' || this.selectFirstValue) {
+      if (!this.isValueSelected) {
         this.currentLabel = buttonlabel
+        this.isValueSelected = true
       } else {
         this.currentLabel += buttonlabel
       }
@@ -54,10 +55,12 @@ export default {
     plus: function () {
       this.symbolsOfOperation = 'plus'
       this.selectFirstValue = this.currentLabel
+      this.isValueSelected = false
     },
     multiplied: function () {
       this.symbolsOfOperation = 'multiplied'
       this.selectFirstValue = this.currentLabel
+      this.isValueSelected = false
     },
     sum: function () {
       if (this.currentLabel !=='' && this.symbolsOfOperation === 'plus') {
@@ -71,6 +74,7 @@ export default {
     clear: function () {
       this.currentLabel = '0'
       this.selectFirstValue = ''
+      this.isValueSelected = false
       this.total = 0
     }
   },
