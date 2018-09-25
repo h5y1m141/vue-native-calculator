@@ -12,7 +12,7 @@ export default {
     detectButton: Function
   },
   methods: {
-    select: function () {
+    select () {
       this.detectButton(this.buttonlabel)
     }
   }

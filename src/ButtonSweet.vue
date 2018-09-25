@@ -26,7 +26,7 @@ export default {
     onAdd: Function
   },
   methods: {
-    detectButton: function () {
+    detectButton() {
       this.onAdd(this.buttonlabel)
     }
   },

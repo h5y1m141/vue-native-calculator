@@ -74,7 +74,7 @@ export default {
     ButtonSweet
   },
   methods: {
-    _onPress: function (buttonlabel) {
+    _onPress(buttonlabel) {
       if (!this.isValueSelected) {
         this.currentLabel = buttonlabel
         this.isValueSelected = true
@@ -82,17 +82,17 @@ export default {
         this.currentLabel += buttonlabel
       }
     },
-    plus: function () {
+    plus() {
       this.symbolsOfOperation = 'plus'
       this.selectFirstValue = this.currentLabel
       this.isValueSelected = false
     },
-    multiplied: function () {
+    multiplied() {
       this.symbolsOfOperation = 'multiplied'
       this.selectFirstValue = this.currentLabel
       this.isValueSelected = false
     },
-    sum: function () {
+    sum() {
       if (this.currentLabel !=='' && this.symbolsOfOperation === 'plus') {
         this.currentLabel = parseInt(this.currentLabel) + parseInt(this.selectFirstValue)
       } else if (this.currentLabel !=='' && this.symbolsOfOperation === 'multiplied') {
@@ -101,7 +101,7 @@ export default {
         this.clear()
       }
     },
-    clear: function () {
+    clear() {
       this.currentLabel = '0'
       this.selectFirstValue = ''
       this.isValueSelected = false
