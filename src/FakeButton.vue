@@ -21,12 +21,9 @@ export default {
 }
 .button {
   flex: 1;
-
   margin-left: 5px;
   align-items: center;
   justify-content: center;
-  padding-top: 5px;
-  padding-bottom: 5px;
   max-width: 80px;
   border-radius: 10px;
 }

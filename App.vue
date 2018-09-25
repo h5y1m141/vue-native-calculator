@@ -2,7 +2,35 @@
   <view class="container">
     <view class="main">
       <view class="button-container">
-        <text class="button-text">{{ currentLabel }}</text>
+        <text class="button-text">{{ currentLabel }}円</text>
+      </view>
+    </view>
+    <view class="main">
+      <view>
+        <button-sweet :on-add='_onPress' :buttonlabel="'3000'" :icon="'11'"/>
+      </view>
+      <view>
+        <button-sweet :on-add='_onPress' :buttonlabel="'600'" :icon="'3'"/>
+      </view>
+      <view>
+        <button-sweet :on-add='_onPress' :buttonlabel="'400'" :icon="'5'"/>
+      </view>
+      <view>
+        <button-sweet :on-add='_onPress' :buttonlabel="'500'" :icon="'6'"/>
+      </view>
+    </view>
+    <view class="main">
+      <view>
+        <button-sweet :on-add='_onPress' :buttonlabel="'500'" :icon="'7'"/>
+      </view>
+      <view>
+        <button-sweet :on-add='_onPress' :buttonlabel="'600'" :icon="'4'"/>
+      </view>
+      <view>
+        <button-sweet :on-add='_onPress' :buttonlabel="'1500'" :icon="'8'"/>
+      </view>
+      <view>
+        <button-sweet :on-add='_onPress' :buttonlabel="'100'" :icon="'10'"/>
       </view>
     </view>
     <view class="main">
@@ -36,12 +64,14 @@
 import ButtonNumber from './src/ButtonNumber';
 import ButtonSymbolsOfOperation from './src/ButtonSymbolsOfOperation';
 import FakeButton from './src/FakeButton';
+import ButtonSweet from './src/ButtonSweet'
 
 export default {
   components: {
     ButtonNumber,
     ButtonSymbolsOfOperation,
-    FakeButton
+    FakeButton,
+    ButtonSweet
   },
   methods: {
     _onPress: function (buttonlabel) {
@@ -90,17 +120,17 @@ export default {
 .container {
   background-color: #ffffffe1;
   flex: 1;
-  padding-top: 50px;
+  padding-top: 20px;
   align-items: center;
 }
 .button-container {
   flex: 1;
   padding: 2px;
+  max-height: 120px;
 }
 .main {
   flex: 1;
   flex-direction: row;
-  max-width: 400px;
   align-items: center;
 }
 .button-text {
@@ -110,4 +140,18 @@ export default {
   text-align: right;
   padding: 5px;
 }
+.button {
+  flex: 1;
+  margin-left: 5px;
+  align-items: center;
+  justify-content: center;
+  max-width: 80px;
+  max-height: 80px;
+  border-radius: 10px;
+}
+.image-icon {
+  width: 72px;
+  height: 72px;
+}
+
 </style>

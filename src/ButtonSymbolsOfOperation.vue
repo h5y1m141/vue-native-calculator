@@ -26,9 +26,11 @@ export default {
 .calc-button {
   flex: 1;
   background-color: #99ddcc;
+  margin-left: 5px;
   align-items: center;
   justify-content: center;
   max-width: 80px;
+  max-height: 80px;
   border-radius: 10px;
 }
 .calc-button-text {

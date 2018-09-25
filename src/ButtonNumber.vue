@@ -23,7 +23,7 @@ export default {
 <style>
 .container {
   flex: 1;
-  padding: 2px;  
+  padding: 1px;
 }
 .button {
   flex: 1;
@@ -31,9 +31,8 @@ export default {
   margin-left: 5px;
   align-items: center;
   justify-content: center;
-  padding-top: 5px;
-  padding-bottom: 5px;
   max-width: 80px;
+  max-height: 80px;
   border-radius: 10px;
 }
 .button-text {
